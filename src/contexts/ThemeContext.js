@@ -9,10 +9,16 @@ class ThemeContextProvider extends Component {
     light: { color: "#555", ui: "#ddd", bg: "#eee" },
     dark: { color: "#ddd", ui: "orange", bg: "white" },
   };
+
+  changeTheme = () => {
+    this.setState({ isLightTheme: !isLightTheme });
+  };
   render() {
     return (
-      //pass state data to provider
-      <ThemeContext.Provider value={{ ...this.state }}>
+      //pass state data, function to provider
+      <ThemeContext.Provider
+        value={{ ...this.state, changeTheme: this.changeTheme }}
+      >
         {this.props.children}
       </ThemeContext.Provider>
     );
