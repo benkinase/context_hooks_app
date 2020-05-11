@@ -11,7 +11,7 @@ class ThemeContextProvider extends Component {
   };
 
   changeTheme = () => {
-    this.setState({ isLightTheme: !isLightTheme });
+    this.setState({ isLightTheme: !this.state.isLightTheme });
   };
   render() {
     return (
